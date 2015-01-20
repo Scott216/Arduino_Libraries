@@ -1,0 +1,32 @@
+#######################################
+# Syntax Coloring Map for Clock
+#######################################
+
+#######################################
+# Datatypes (KEYWORD1)
+#######################################
+
+Clock	KEYWORD1
+DateTime	KEYWORD1
+#######################################
+# Methods and Functions (KEYWORD2)
+#######################################
+
+Setup	KEYWORD2
+Maintain	KEYWORD2
+SetTimezoneOffset	KEYWORD2
+GetTimestamp	KEYWORD2
+WriteTime	KEYWORD2
+WriteDateTime	KEYWORD2
+DecodeTo	KEYWORD2
+Second	KEYWORD2
+Minute	KEYWORD2
+Hour	KEYWORD2
+Month	KEYWORD2
+Day	KEYWORD2
+Year	KEYWORD2
+
+#######################################
+# Constants (LITERAL1)
+#######################################
+

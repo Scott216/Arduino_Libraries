@@ -1,0 +1,6 @@
+Geogram ONE needs this library
+Reference:http://www.dsscircuits.com/forum/index.php/topic,34.0.html
+
+AltSoftSerial emulates an additional serial port, allowing you to communicate with another serial device. 
+
+Source: http://www.pjrc.com/teensy/td_libs_AltSoftSerial.html

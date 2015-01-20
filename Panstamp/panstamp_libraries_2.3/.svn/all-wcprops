@@ -1,0 +1,185 @@
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/!svn/ver/1032/trunk/arduino/libraries/panstamp
+END
+COPYING
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/!svn/ver/887/trunk/arduino/libraries/panstamp/COPYING
+END
+calibration.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/971/trunk/arduino/libraries/panstamp/calibration.cpp
+END
+cc1101.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/!svn/ver/1043/trunk/arduino/libraries/panstamp/cc1101.cpp
+END
+swcommand.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/971/trunk/arduino/libraries/panstamp/swcommand.cpp
+END
+panstamp.h
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/!svn/ver/1044/trunk/arduino/libraries/panstamp/panstamp.h
+END
+register.h
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/!svn/ver/971/trunk/arduino/libraries/panstamp/register.h
+END
+spi.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/!svn/ver/887/trunk/arduino/libraries/panstamp/spi.cpp
+END
+calibration.h
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/971/trunk/arduino/libraries/panstamp/calibration.h
+END
+swstatus.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/971/trunk/arduino/libraries/panstamp/swstatus.cpp
+END
+swcommand.h
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/!svn/ver/971/trunk/arduino/libraries/panstamp/swcommand.h
+END
+cc1101.h
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/!svn/ver/1043/trunk/arduino/libraries/panstamp/cc1101.h
+END
+spi.h
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/1030/trunk/arduino/libraries/panstamp/spi.h
+END
+RELEASES.txt
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/1044/trunk/arduino/libraries/panstamp/RELEASES.txt
+END
+avrrtc.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/!svn/ver/1030/trunk/arduino/libraries/panstamp/avrrtc.cpp
+END
+swstatus.h
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/!svn/ver/971/trunk/arduino/libraries/panstamp/swstatus.h
+END
+datatypes.h
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/!svn/ver/971/trunk/arduino/libraries/panstamp/datatypes.h
+END
+keywords.txt
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/798/trunk/arduino/libraries/panstamp/keywords.txt
+END
+avrrtc.h
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/981/trunk/arduino/libraries/panstamp/avrrtc.h
+END
+repeater.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/1032/trunk/arduino/libraries/panstamp/repeater.cpp
+END
+nvolat.h
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/971/trunk/arduino/libraries/panstamp/nvolat.h
+END
+config.h
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/971/trunk/arduino/libraries/panstamp/config.h
+END
+repeater.h
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/!svn/ver/971/trunk/arduino/libraries/panstamp/repeater.h
+END
+commonregs.h
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/974/trunk/arduino/libraries/panstamp/commonregs.h
+END
+swquery.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/!svn/ver/971/trunk/arduino/libraries/panstamp/swquery.cpp
+END
+swpacket.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/1037/trunk/arduino/libraries/panstamp/swpacket.cpp
+END
+ccpacket.h
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/!svn/ver/887/trunk/arduino/libraries/panstamp/ccpacket.h
+END
+panstamp.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/1044/trunk/arduino/libraries/panstamp/panstamp.cpp
+END
+register.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/1039/trunk/arduino/libraries/panstamp/register.cpp
+END
+swquery.h
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/!svn/ver/971/trunk/arduino/libraries/panstamp/swquery.h
+END
+swpacket.h
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/!svn/ver/971/trunk/arduino/libraries/panstamp/swpacket.h
+END

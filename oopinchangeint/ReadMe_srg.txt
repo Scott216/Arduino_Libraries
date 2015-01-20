@@ -1,0 +1,3 @@
+Source http://code.google.com/p/oopinchangeint/
+
+The ooPinChangeInt library implements Pin Change interrupts for the Arduino environment. This library is derived from the PinChangeInt library at http://code.google.com/p/arduino-pinchangeint/. It is a departure from the PinChangeInt library by being more object-oriented. The library depends on an interface class called CallBackInterface. Your class subclasses the CallBackInterface and provides a method called "cbmethod()". It's less scary than it sounds; see the example sketch in the Wiki. 

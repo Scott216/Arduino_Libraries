@@ -1,0 +1,43 @@
+************************************************
+
+Arduino CC1101 driver, SWAP stack, application library and sample code
+for the panStamp. PanStamp is a low-power wireless board programmable
+from the Arduino IDE.
+
+Web sites:
+http://www.panstamp.com
+http://panstamp.blogspot.com 
+
+************************************************
+
+================================================
+<<<<<<< .mine
+	v0.0.4 (Jul/04/2011)
+================================================
+- New disableAddressCheck method in CC1101 class
+- Corrections on some EEPROM procedures
+
+================================================
+=======
+	v0.0.4 (Jun/01/2011)
+================================================
+- Acess to global registers has been optimized
+- SWAP is now register-centered, not endpoint-centered
+
+================================================
+>>>>>>> .r78
+	v0.0.3 (Apr/26/2011)
+================================================
+- "Endpoint" renamed as "register" in the scope of the SWAP protocol
+- A single register can now contain multiple endpoints
+
+================================================
+	v0.0.2 (Mar/21/2011)
+================================================
+- Corrections on the transmission of the security nonce
+
+================================================
+	v0.0.1 (Mar/18/2011)
+================================================
+- First version
+

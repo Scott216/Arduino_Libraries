@@ -1,0 +1,3 @@
+I2C Address 0x3C Ref: https://www.youtube.com/watch?v=VEZGn0zYHiE&t=7m27s
+
+Cheap OLED: http://www.banggood.com/0_96-Inch-I2C-IIC-SPI-Serial-128-X-64-OLED-LCD-LED-Display-Module-p-922246.html
