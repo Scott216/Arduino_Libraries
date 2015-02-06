@@ -9,6 +9,15 @@
 // it is released under the same Creative Commons Attrib Share-Alike License
 // You are free to use/extend this library but please abide with the CC-BY-SA license:
 // http://creativecommons.org/licenses/by-sa/3.0/
+//
+// Scott's Notes
+// - Made changes so library would work with MoteinoMega
+// - Added statement to insure slave select pin would be high
+// - Slowed down SPI speed
+// - Moved SPI.setDataMode(), SPI.setBitOrder(), SPI.setClockDivider from initialize() to interruptHandler()
+// The above changes reflect some of the changes in the LowPowerLabs RFM69 library
+// See forum post: https://lowpowerlab.com/forum/index.php/topic,864.msg5461.html#msg5461
+
 
 #ifndef DAVISRFM69_h
 #define DAVISRFM69_h
