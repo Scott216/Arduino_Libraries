@@ -208,6 +208,12 @@ void Adafruit_LEDBackpack::begin(uint8_t _addr = 0x70) {
   Wire.beginTransmission(i2c_addr);
   Wire.write(0x21);  // turn on oscillator
   Wire.endTransmission();
+
+  // ensure RAM is cleared before turning on display
+  // SRG changed, see: https://github.com/adafruit/Adafruit-LED-Backpack-Library/issues/20
+  clear();
+  writeDisplay();
+
   blinkRate(HT16K33_BLINK_OFF);
   
   setBrightness(15); // max brightness
