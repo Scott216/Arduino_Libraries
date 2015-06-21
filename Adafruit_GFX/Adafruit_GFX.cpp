@@ -304,7 +304,8 @@ void Adafruit_GFX::fillTriangle ( int16_t x0, int16_t y0,
     dx02 = x2 - x0,
     dy02 = y2 - y0,
     dx12 = x2 - x1,
-    dy12 = y2 - y1,
+    dy12 = y2 - y1;
+  int32_t
     sa   = 0,
     sb   = 0;
 
@@ -357,7 +358,46 @@ void Adafruit_GFX::drawBitmap(int16_t x, int16_t y,
   for(j=0; j<h; j++) {
     for(i=0; i<w; i++ ) {
       if(pgm_read_byte(bitmap + j * byteWidth + i / 8) & (128 >> (i & 7))) {
-	drawPixel(x+i, y+j, color);
+        drawPixel(x+i, y+j, color);
+      }
+    }
+  }
+}
+
+// Draw a 1-bit color bitmap at the specified x, y position from the
+// provided bitmap buffer (must be PROGMEM memory) using color as the
+// foreground color and bg as the background color.
+void Adafruit_GFX::drawBitmap(int16_t x, int16_t y,
+            const uint8_t *bitmap, int16_t w, int16_t h,
+            uint16_t color, uint16_t bg) {
+
+  int16_t i, j, byteWidth = (w + 7) / 8;
+  
+  for(j=0; j<h; j++) {
+    for(i=0; i<w; i++ ) {
+      if(pgm_read_byte(bitmap + j * byteWidth + i / 8) & (128 >> (i & 7))) {
+        drawPixel(x+i, y+j, color);
+      }
+      else {
+      	drawPixel(x+i, y+j, bg);
+      }
+    }
+  }
+}
+
+//Draw XBitMap Files (*.xbm), exported from GIMP,
+//Usage: Export from GIMP to *.xbm, rename *.xbm to *.c and open in editor.
+//C Array can be directly used with this function
+void Adafruit_GFX::drawXBitmap(int16_t x, int16_t y,
+                              const uint8_t *bitmap, int16_t w, int16_t h,
+                              uint16_t color) {
+  
+  int16_t i, j, byteWidth = (w + 7) / 8;
+  
+  for(j=0; j<h; j++) {
+    for(i=0; i<w; i++ ) {
+      if(pgm_read_byte(bitmap + j * byteWidth + i / 8) & (1 << (i % 8))) {
+        drawPixel(x+i, y+j, color);
       }
     }
   }
@@ -426,6 +466,14 @@ void Adafruit_GFX::setCursor(int16_t x, int16_t y) {
   cursor_y = y;
 }
 
+int16_t Adafruit_GFX::getCursorX(void) const {
+  return cursor_x;
+}
+
+int16_t Adafruit_GFX::getCursorY(void) const {
+  return cursor_y;
+}
+
 void Adafruit_GFX::setTextSize(uint8_t s) {
   textsize = (s > 0) ? s : 1;
 }
@@ -445,7 +493,7 @@ void Adafruit_GFX::setTextWrap(boolean w) {
   wrap = w;
 }
 
-uint8_t Adafruit_GFX::getRotation(void) {
+uint8_t Adafruit_GFX::getRotation(void) const {
   return rotation;
 }
 
@@ -466,11 +514,11 @@ void Adafruit_GFX::setRotation(uint8_t x) {
 }
 
 // Return the size of the display (per current rotation)
-int16_t Adafruit_GFX::width(void) {
+int16_t Adafruit_GFX::width(void) const {
   return _width;
 }
  
-int16_t Adafruit_GFX::height(void) {
+int16_t Adafruit_GFX::height(void) const {
   return _height;
 }
 
@@ -478,3 +526,70 @@ void Adafruit_GFX::invertDisplay(boolean i) {
   // Do nothing, must be subclassed if supported
 }
 
+/***************************************************************************/
+// code for the GFX button UI element
+
+Adafruit_GFX_Button::Adafruit_GFX_Button(void) {
+   _gfx = 0;
+}
+
+void Adafruit_GFX_Button::initButton(Adafruit_GFX *gfx,
+					  int16_t x, int16_t y, 
+					  uint8_t w, uint8_t h, 
+					  uint16_t outline, uint16_t fill, 
+					  uint16_t textcolor,
+					  char *label, uint8_t textsize)
+{
+  _x = x;
+  _y = y;
+  _w = w;
+  _h = h;
+  _outlinecolor = outline;
+  _fillcolor = fill;
+  _textcolor = textcolor;
+  _textsize = textsize;
+  _gfx = gfx;
+  strncpy(_label, label, 9);
+  _label[9] = 0;
+}
+
+ 
+
+ void Adafruit_GFX_Button::drawButton(boolean inverted) {
+   uint16_t fill, outline, text;
+
+   if (! inverted) {
+     fill = _fillcolor;
+     outline = _outlinecolor;
+     text = _textcolor;
+   } else {
+     fill =  _textcolor;
+     outline = _outlinecolor;
+     text = _fillcolor;
+   }
+
+   _gfx->fillRoundRect(_x - (_w/2), _y - (_h/2), _w, _h, min(_w,_h)/4, fill);
+   _gfx->drawRoundRect(_x - (_w/2), _y - (_h/2), _w, _h, min(_w,_h)/4, outline);
+   
+   
+   _gfx->setCursor(_x - strlen(_label)*3*_textsize, _y-4*_textsize);
+   _gfx->setTextColor(text);
+   _gfx->setTextSize(_textsize);
+   _gfx->print(_label);
+ }
+
+boolean Adafruit_GFX_Button::contains(int16_t x, int16_t y) {
+   if ((x < (_x - _w/2)) || (x > (_x + _w/2))) return false;
+   if ((y < (_y - _h)) || (y > (_y + _h/2))) return false;
+   return true;
+ }
+
+
+ void Adafruit_GFX_Button::press(boolean p) {
+   laststate = currstate;
+   currstate = p;
+ }
+ 
+ boolean Adafruit_GFX_Button::isPressed() { return currstate; }
+ boolean Adafruit_GFX_Button::justPressed() { return (currstate && !laststate); }
+ boolean Adafruit_GFX_Button::justReleased() { return (!currstate && laststate); }

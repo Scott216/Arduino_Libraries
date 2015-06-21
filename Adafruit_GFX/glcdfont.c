@@ -7,9 +7,14 @@
 #else
  #define PROGMEM
 #endif
- 
+
+// This gets rid of compiler warning: Only initialized variables can be placed into program memory area
+#undef PROGMEM
+#define PROGMEM __attribute__(( section(".progmem.data") ))
+
+
 // Standard ASCII 5x7 font
-// SRG - added missing character, see: https://github.com/adafruit/Adafruit-GFX-Library/issues/22
+// SRG - added missing character, see: http://github.com/adafruit/Adafruit-GFX-Library/issues/22
 static const unsigned char font[] PROGMEM = {
   0x00, 0x00, 0x00, 0x00, 0x00,
 	0x3E, 0x5B, 0x4F, 0x5B, 0x3E,

@@ -18,7 +18,6 @@
 // The above changes reflect some of the changes in the LowPowerLabs RFM69 library
 // See forum post: https://lowpowerlab.com/forum/index.php/topic,864.msg5461.html#msg5461
 
-
 #ifndef DAVISRFM69_h
 #define DAVISRFM69_h
 
@@ -32,11 +31,10 @@
 //#define DAVIS_FREQS_AU
 //#define DAVIS_FREQS_NZ
 
-#include <Davisdef.h>           // http://github.com/dekay/DavisRFM69/blob/master/Davisdef.h
-#include <Arduino.h>            // Assumes Arduino IDE v1.0 or greater
-
-#define DAVIS_PACKET_LEN      8 // ISS has fixed packet lengths of eight bytes, including CRC
-#define SPI_CS               SS // SS is the SPI slave select pin, for instance D10 on atmega328
+#include <Davisdef.h>            // http://github.com/dekay/DavisRFM69/blob/master/Davisdef.h
+#include <Arduino.h>             // Assumes Arduino IDE v1.0 or greater
+#define DAVIS_PACKET_LEN      8  // ISS has fixed packet lengths of eight bytes, including CRC
+#define SPI_CS               SS  // SS is the SPI slave select pin, for instance D10 on atmega328
 
 // SRG  Added if defined  for MoteinoMega comp ability
 //      Ref: https://github.com/LowPowerLab/RFM69/commit/e8a076784954da19acd2009b12e23f15e5894b8d

@@ -16,13 +16,11 @@ BSD license, check license.txt for more information
 All text above, and the splash screen must be included in any redistribution
 *********************************************************************/
 
-#if ARDUINO >= 100
- #include "Arduino.h"
- #define WIRE_WRITE Wire.write
-#else
- #include "WProgram.h"
-  #define WIRE_WRITE Wire.send
-#endif
+#ifndef ADAFRUIT_SSD1306_H  // SRG - added include guards.  See: https://github.com/adafruit/Adafruit_SSD1306/pull/27/files
+#define ADAFRUIT_SSD1306_H
+
+#include "Arduino.h"
+#define WIRE_WRITE Wire.write
 
 #ifdef __SAM3X8E__
  typedef volatile RwReg PortReg;
@@ -57,8 +55,8 @@ All text above, and the splash screen must be included in any redistribution
     SSD1306_96_16
 
     -----------------------------------------------------------------------*/
-   #define SSD1306_128_64
-//   #define SSD1306_128_32
+//   #define SSD1306_128_64
+   #define SSD1306_128_32
 //   #define SSD1306_96_16
 /*=========================================================================*/
 
@@ -168,3 +166,5 @@ class Adafruit_SSD1306 : public Adafruit_GFX {
   inline void drawFastHLineInternal(int16_t x, int16_t y, int16_t w, uint16_t color) __attribute__((always_inline));
 
 };
+
+#endif /* ADAFRUIT_SSD1306_H */
